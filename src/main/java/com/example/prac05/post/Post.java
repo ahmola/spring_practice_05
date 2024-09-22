@@ -42,4 +42,9 @@ public class Post {
     @JoinColumn(name = "user_id")
     @JsonBackReference
     private User user;
+
+    public Post(PostDTO postDTO){
+        this.body = postDTO.getBody();
+        this.title = postDTO.getTitle();
+    }
 }

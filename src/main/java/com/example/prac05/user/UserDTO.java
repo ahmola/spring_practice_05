@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @AllArgsConstructor
@@ -19,8 +20,8 @@ public class UserDTO {
 
     private String email;
 
-    private List<Long> postsId;
+    private List<Long> postsId = new ArrayList<>();
 
-    private List<Long> commentsIds;
+    private List<Long> commentsIds = new ArrayList<>();
 
 }

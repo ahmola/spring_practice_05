@@ -38,4 +38,14 @@ public class UserController {
     public ResponseEntity<EntityModel<UserModel>> getUser(@RequestParam(name = "id") Long id){
         return new ResponseEntity<>(userService.findUser(id), HttpStatus.OK);
     }
+
+    @PutMapping
+    public ResponseEntity<EntityModel<UserModel>> fixUser(@RequestBody UserDTO userDTO){
+        return new ResponseEntity<>(userService.fixUser(userDTO), HttpStatus.OK);
+    }
+
+    @DeleteMapping
+    public ResponseEntity<EntityModel<Boolean>> deleteUser(@RequestParam(name = "id") Long id) throws Exception {
+        return new ResponseEntity<>(userService.deleteUser(id), HttpStatus.OK);
+    }
 }
